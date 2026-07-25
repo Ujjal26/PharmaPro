@@ -9,7 +9,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import Header from "./headers/Header";
-import SideNavbar from "./side navbar/SideNavbar";
+import SideNavbar from "./side navbar/Sidenavbar";
 import Dashboard from "./dashboard/Dashboard";
 import InventoryTable from "./table/InventoryTable";
 import ExpiryMonitorCards from "./cards/ExpiryMonitorCards";

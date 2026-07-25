@@ -4,7 +4,7 @@
  * Allows users to switch between different views (Dashboard, Inventory, etc.) 
  * and provides a quick action for "New Dispense".
  */
-import "./SideNavbar.css";
+import "./Sidenavbar.css";
 
 const navItems = [
   { label: "Dashboard", value: "dashboard", icon: "⊞" },
