@@ -1,0 +1,196 @@
+/* ─── Section ─── */
+.expiry-monitor { display: flex; flex-direction: column; gap: 20px; }
+
+/* ─── Page Header ─── */
+.expiry-page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.expiry-page-header h2 { font-size: 24px; font-weight: 600; letter-spacing: -0.01em; }
+.expiry-page-header p { font-size: 14px; color: var(--on-surface-variant); margin-top: 4px; }
+.expiry-header-badges { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.expiry-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 5px 12px; border-radius: var(--radius-pill);
+  font-size: 12px; font-weight: 600;
+}
+.badge-urgent { background: var(--critical-bg); color: var(--critical); border: 1px solid var(--critical-border); }
+.badge-warning { background: var(--warning-bg); color: var(--warning); border: 1px solid var(--warning-border); }
+.badge-neutral { background: var(--surface-container-low); color: var(--on-surface-variant); border: 1px solid var(--outline-variant); }
+
+/* ─── Filters Bar ─── */
+.expiry-filters-bar {
+  display: flex; gap: 20px; padding: 14px 20px; flex-wrap: wrap; align-items: center;
+}
+.expiry-filter-group { display: flex; align-items: center; gap: 10px; }
+.expiry-filter-group .form-control { height: 36px; font-size: 13px; min-width: 160px; }
+
+/* ─── Cards Grid ─── */
+.expiry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* ─── Expiry Card ─── */
+.expiry-card {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--outline-variant);
+  background: var(--surface-container-lowest);
+  padding: 18px;
+  box-shadow: var(--shadow-level-1);
+  display: flex; flex-direction: column; gap: 14px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.3s ease;
+}
+.expiry-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-level-2); }
+.expiry-card.clearing { opacity: 0.5; pointer-events: none; }
+.expiry-card.urgent { border-color: var(--critical-border); background: linear-gradient(135deg, #fff1f2 0%, #fff7f7 100%); }
+.expiry-card.warning { border-color: var(--warning-border); background: linear-gradient(135deg, #fffbeb 0%, #fffdf5 100%); }
+.expiry-card.caution { border-color: var(--primary-fixed-dim); background: linear-gradient(135deg, var(--primary-fixed) 0%, #f5f8ff 100%); }
+
+/* ─── Card Header ─── */
+.expiry-card-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.urgency-chip {
+  display: inline-block; padding: 2px 8px; border-radius: var(--radius-pill);
+  font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.urgency-urgent { background: var(--critical); color: var(--on-primary); }
+.urgency-warning { background: var(--warning); color: var(--on-primary); }
+.urgency-caution { background: var(--primary); color: var(--on-primary); }
+
+/* ─── Card name ─── */
+.expiry-card-name { font-size: 15px; font-weight: 600; line-height: 22px; letter-spacing: -0.01em; }
+
+/* ─── Detail rows ─── */
+.expiry-card-details {
+  display: flex; flex-direction: column; gap: 6px;
+  background: rgba(0,0,0,0.02); border-radius: var(--radius-sm); padding: 10px 12px;
+}
+.detail-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.detail-label {
+  font-size: 11px; font-weight: 500; text-transform: uppercase;
+  letter-spacing: 0.04em; color: var(--on-surface-variant); flex-shrink: 0;
+}
+.detail-value { font-size: 12px; color: var(--on-surface); text-align: right; }
+.detail-value.mono { font-family: var(--font-mono); font-size: 11px; }
+
+/* ─── Countdown ─── */
+.expiry-countdown {
+  display: flex; align-items: center; gap: 10px;
+  padding-top: 4px; border-top: 1px solid rgba(0,0,0,0.06);
+}
+.countdown-days {
+  font-size: 32px; font-weight: 700; font-family: var(--font-mono);
+  letter-spacing: -0.03em; line-height: 1;
+}
+.countdown-days.urgent { color: var(--critical); }
+.countdown-days.warning { color: var(--warning); }
+.countdown-days.caution { color: var(--primary); }
+.countdown-label { font-size: 13px; color: var(--on-surface-variant); }
+
+/* ─── Clear button ─── */
+.clear-item-btn {
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+  letter-spacing: 0.02em;
+}
+.clear-item-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.clear-item-btn.urgent {
+  background: rgba(220, 38, 38, 0.08);
+  color: var(--critical);
+  border-color: var(--critical-border);
+}
+.clear-item-btn.urgent:hover:not(:disabled) {
+  background: var(--critical-bg);
+  transform: translateY(-1px);
+}
+.clear-item-btn.warning {
+  background: rgba(217, 119, 6, 0.08);
+  color: var(--warning);
+  border-color: var(--warning-border);
+}
+.clear-item-btn.warning:hover:not(:disabled) {
+  background: var(--warning-bg);
+  transform: translateY(-1px);
+}
+.clear-item-btn.caution {
+  background: var(--primary-fixed);
+  color: var(--primary-deep);
+  border-color: var(--primary-fixed-dim);
+}
+.clear-item-btn.caution:hover:not(:disabled) {
+  background: var(--primary-fixed-dim);
+  transform: translateY(-1px);
+}
+
+/* ─── Confirm dialog ─── */
+.clear-confirm {
+  background: var(--surface-container-low);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  animation: slideDown 0.2s ease both;
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.clear-confirm-msg {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--on-surface);
+  margin-bottom: 10px;
+  text-align: center;
+}
+.clear-confirm-btns { display: flex; gap: 8px; }
+.btn-clear-yes, .btn-clear-no {
+  flex: 1; padding: 7px 8px; border-radius: var(--radius-sm);
+  font-size: 12px; font-weight: 600; cursor: pointer;
+  border: none; transition: background 0.12s ease;
+}
+.btn-clear-yes {
+  background: var(--critical); color: var(--on-primary);
+}
+.btn-clear-yes:hover { background: #b91c1c; }
+.btn-clear-no {
+  background: var(--surface-container); color: var(--on-surface-variant);
+  border: 1px solid var(--outline-variant);
+}
+.btn-clear-no:hover { background: var(--surface-container-high); }
+
+/* ─── Empty state ─── */
+.expiry-empty-state {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;
+}
+.expiry-empty-state .empty-icon {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--success-bg); color: var(--success);
+  font-size: 24px; font-weight: 700; display: grid; place-items: center;
+  border: 2px solid var(--success-border);
+}
+.expiry-empty-state h3 { font-size: 18px; font-weight: 600; }
+.expiry-empty-state p { font-size: 14px; color: var(--on-surface-variant); max-width: 320px; }
+
+/* ─── Responsive ─── */
+@media (max-width: 1200px) { .expiry-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 700px) {
+  .expiry-grid { grid-template-columns: 1fr; }
+  .expiry-filters-bar { flex-direction: column; align-items: stretch; }
+  .expiry-filter-group { flex-direction: column; align-items: flex-start; }
+  .expiry-page-header { flex-direction: column; align-items: flex-start; }
+}

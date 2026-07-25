@@ -1,0 +1,378 @@
+/* ─── Shared chart card styles ─── */
+.chart-card {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.chart-card header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.chart-card header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--on-surface);
+}
+
+.chart-card header p {
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  margin-top: 3px;
+}
+
+/* ─── Bar chart ─── */
+.bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 44px;
+  align-items: center;
+  gap: 12px;
+}
+
+.bar-row p {
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bar-track {
+  height: 10px;
+  background: var(--surface-container-high);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(90deg, var(--primary-deep) 0%, var(--primary) 100%);
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bar-fill.bar-warning {
+  background: linear-gradient(90deg, #b45309 0%, var(--warning) 100%);
+}
+
+.bar-fill.bar-critical {
+  background: linear-gradient(90deg, #991b1b 0%, var(--critical) 100%);
+}
+
+.bar-row span {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--on-surface-variant);
+  text-align: right;
+}
+
+/* ─── Activity Feed ─── */
+.activity-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.activity-feed li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--outline-variant);
+}
+
+.activity-feed li:last-child {
+  border-bottom: none;
+}
+
+.activity-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-fixed) 0%, var(--secondary-fixed) 100%);
+  color: var(--primary-deep);
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.activity-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--on-surface);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.activity-meta {
+  font-size: 12px;
+  color: var(--on-surface-variant);
+  margin-top: 2px;
+}
+
+.activity-meta span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: var(--surface-container);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.activity-time {
+  font-size: 11px;
+  color: var(--on-surface-variant);
+  white-space: nowrap;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+/* ─── Near Expiry Table (Critical Alerts) ─── */
+.near-expiry-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.near-expiry-section header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--outline-variant);
+}
+
+.near-expiry-section header h3 {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.alert-count-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--critical-bg);
+  color: var(--critical);
+  border: 1px solid var(--critical-border);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.near-expiry-table-wrap {
+  overflow-x: auto;
+}
+
+.near-expiry-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.near-expiry-table th {
+  padding: 10px 16px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--on-surface-variant);
+  background: var(--surface-container-low);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.near-expiry-table td {
+  padding: 12px 16px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--outline-variant);
+  color: var(--on-surface);
+  vertical-align: middle;
+}
+
+.near-expiry-table tr:last-child td {
+  border-bottom: none;
+}
+
+.near-expiry-table tr:hover td {
+  background: var(--row-hover);
+}
+
+.days-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+
+.days-urgent {
+  background: var(--critical-bg);
+  color: var(--critical);
+  border: 1px solid var(--critical-border);
+}
+
+.days-warning {
+  background: var(--warning-bg);
+  color: var(--warning);
+  border: 1px solid var(--warning-border);
+}
+
+.no-alerts-row td {
+  text-align: center;
+  color: var(--on-surface-variant);
+  padding: 32px;
+}
+
+/* ─── Stock Trend Graph ─── */
+.stock-trend-card {
+  overflow: hidden;
+}
+
+.trend-badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.trend-up {
+  background: var(--success-bg);
+  color: var(--success);
+  border: 1px solid var(--success-border);
+}
+
+.trend-down {
+  background: var(--critical-bg);
+  color: var(--critical);
+  border: 1px solid var(--critical-border);
+}
+
+.metric-toggle {
+  display: flex;
+  background: var(--surface-container-low);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.metric-toggle button {
+  background: transparent;
+  border: none;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--on-surface-variant);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.metric-toggle button.active {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.trend-svg-wrap {
+  width: 100%;
+  position: relative;
+  overflow: visible;
+  padding-bottom: 8px;
+}
+
+.trend-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Add SVG animation for the line drawing */
+.trend-line {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: drawLine 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.trend-summary-row {
+  display: flex;
+  border-top: 1px solid var(--outline-variant);
+  background: var(--surface-container-lowest);
+  margin: 0 -24px -20px -24px;
+}
+
+.trend-summary-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px;
+  border-right: 1px solid var(--outline-variant);
+}
+
+.trend-summary-item:last-child {
+  border-right: none;
+}
+
+.trend-summary-item.current {
+  background: var(--surface-container-low);
+}
+
+.trend-summary-month {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.trend-summary-val {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--on-surface);
+  font-family: var(--font-mono);
+}
+
+@media (max-width: 640px) {
+  .trend-summary-row {
+    flex-wrap: wrap;
+  }
+  .trend-summary-item {
+    flex: 1 1 50%;
+    border-bottom: 1px solid var(--outline-variant);
+  }
+  .trend-summary-item:nth-child(even) {
+    border-right: none;
+  }
+}

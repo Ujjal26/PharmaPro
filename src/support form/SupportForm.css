@@ -1,0 +1,227 @@
+/* ─── Layout ─── */
+.support-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ─── Form Panel ─── */
+.support-form-panel {
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-level-1);
+  overflow: hidden;
+}
+
+.support-form-header {
+  padding: 20px 28px 16px;
+  border-bottom: 1px solid var(--outline-variant);
+  background: var(--surface-container-low);
+}
+
+.support-form-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.support-form-header p {
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  margin-top: 4px;
+}
+
+.support-form {
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ─── Char count ─── */
+.char-count {
+  font-size: 11px;
+  margin-top: 4px;
+  transition: color 0.2s ease;
+}
+
+/* ─── Sidebar ─── */
+.support-info-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: sticky;
+  top: 24px;
+}
+
+.support-info-card {
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  box-shadow: var(--shadow-level-1);
+}
+
+.support-info-card h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.support-info-card p {
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  line-height: 18px;
+}
+
+.urgent-card {
+  border-color: var(--critical-border);
+  background: var(--critical-bg);
+}
+
+.urgent-card h3 {
+  color: var(--critical);
+}
+
+.support-phone {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--critical);
+  text-decoration: none;
+}
+
+.support-phone:hover {
+  text-decoration: underline;
+}
+
+/* ─── Support hours grid ─── */
+.support-hours-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 12px;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.support-hours-grid span:nth-child(odd) {
+  color: var(--on-surface-variant);
+}
+
+.support-hours-grid span:nth-child(even) {
+  font-weight: 500;
+  color: var(--on-surface);
+}
+
+/* ─── Response times ─── */
+.response-times {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.response-time-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.rt-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.rt-label {
+  font-weight: 500;
+  min-width: 52px;
+  color: var(--on-surface);
+}
+
+.rt-time {
+  color: var(--on-surface-variant);
+  margin-left: auto;
+}
+
+/* ─── Success State ─── */
+.support-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 64px 32px;
+  gap: 16px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.support-success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--success-bg) 0%, var(--success-border) 100%);
+  color: var(--success);
+  font-size: 28px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--success-border);
+}
+
+.support-success h2 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.support-success p {
+  font-size: 14px;
+  color: var(--on-surface-variant);
+  line-height: 22px;
+}
+
+.support-ticket-id {
+  padding: 10px 20px;
+  background: var(--surface-container-low);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  color: var(--on-surface-variant);
+}
+
+.support-ticket-id .mono {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+  .support-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .support-info-sidebar {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .support-form {
+    padding: 16px;
+  }
+
+  .support-form-header {
+    padding: 16px;
+  }
+}

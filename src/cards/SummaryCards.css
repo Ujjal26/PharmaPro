@@ -1,0 +1,143 @@
+/* ─── KPI Cards Grid ─── */
+.summary-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* ─── Summary Card ─── */
+.summary-card {
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-level-1);
+  overflow: hidden;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+  cursor: default;
+  position: relative;
+}
+
+.summary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ─── Top indicator bar ─── */
+.summary-card-indicator {
+  height: 4px;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.tone-primary .summary-card-indicator {
+  background: linear-gradient(90deg, var(--primary-deep) 0%, var(--primary) 100%);
+}
+
+.tone-warning .summary-card-indicator {
+  background: linear-gradient(90deg, #92400e 0%, var(--warning) 100%);
+}
+
+.tone-critical .summary-card-indicator {
+  background: linear-gradient(90deg, #991b1b 0%, var(--critical) 100%);
+}
+
+.tone-success .summary-card-indicator {
+  background: linear-gradient(90deg, #14532d 0%, var(--success) 100%);
+}
+
+/* ─── Card Body ─── */
+.summary-card-body {
+  padding: 16px 18px 18px;
+}
+
+/* ─── Top row: label + icon ─── */
+.summary-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.summary-card-title {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+}
+
+/* ─── Icon ─── */
+.summary-card-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.tone-icon-primary {
+  background: var(--primary-fixed);
+  color: var(--primary-deep);
+}
+
+.tone-icon-warning {
+  background: var(--warning-bg);
+  color: var(--warning);
+  border: 1px solid var(--warning-border);
+}
+
+.tone-icon-critical {
+  background: var(--critical-bg);
+  color: var(--critical);
+  border: 1px solid var(--critical-border);
+}
+
+.tone-icon-success {
+  background: var(--success-bg);
+  color: var(--success);
+  border: 1px solid var(--success-border);
+}
+
+/* ─── Value ─── */
+.summary-card-value {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-top: 10px;
+  color: var(--on-surface);
+}
+
+/* ─── Description ─── */
+.summary-card-desc {
+  font-size: 12px;
+  color: var(--on-surface-variant);
+  margin-top: 4px;
+  line-height: 16px;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1280px) {
+  .summary-cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .summary-cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .summary-card-value {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 400px) {
+  .summary-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

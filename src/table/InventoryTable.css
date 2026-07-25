@@ -1,0 +1,335 @@
+/* ─── Inventory Section ─── */
+.inventory-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ─── Controls bar ─── */
+.inv-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.density-toggle {
+  display: flex;
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.density-toggle button {
+  background: var(--surface-container-lowest);
+  border: none;
+  padding: 7px 12px;
+  cursor: pointer;
+  color: var(--on-surface-variant);
+  font-size: 16px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.density-toggle button.active {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.density-toggle button:not(.active):hover {
+  background: var(--surface-container);
+}
+
+/* ─── Filters Bar ─── */
+.inv-filters {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  flex-wrap: wrap;
+}
+
+.inv-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--on-surface-variant);
+  white-space: nowrap;
+}
+
+.inv-filter-group .form-control {
+  height: 34px;
+  font-size: 13px;
+  min-width: 150px;
+}
+
+.inv-results-count {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--on-surface-variant);
+  font-weight: 500;
+  background: var(--surface-container-low);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--outline-variant);
+}
+
+/* ─── Table wrapper ─── */
+.inv-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+}
+
+/* ─── Table ─── */
+.inv-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.inv-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--surface-container-low);
+  padding: 12px 16px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--on-surface-variant);
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--outline-variant);
+  user-select: none;
+}
+
+.inv-table thead th.sortable {
+  cursor: pointer;
+}
+
+.inv-table thead th.sortable:hover {
+  color: var(--primary);
+  background: var(--primary-fixed);
+}
+
+.sort-icon {
+  display: inline-block;
+  margin-left: 4px;
+  font-style: normal;
+}
+
+.sort-icon.neutral {
+  opacity: 0.4;
+  font-size: 10px;
+}
+
+.sort-icon.active {
+  color: var(--primary);
+}
+
+/* ─── Density modes ─── */
+.inv-table.density-compact td {
+  padding: 8px 16px;
+}
+
+.inv-table.density-comfortable td {
+  padding: 14px 16px;
+}
+
+/* ─── Row styles ─── */
+.inv-row {
+  border-bottom: 1px solid var(--outline-variant);
+  transition: background 0.12s ease;
+}
+
+.inv-row:last-child {
+  border-bottom: none;
+}
+
+.inv-row:hover td {
+  background: var(--row-hover);
+}
+
+.inv-table td {
+  font-size: 13px;
+  color: var(--on-surface);
+  vertical-align: middle;
+}
+
+/* ─── Cell types ─── */
+.medicine-name-cell {
+  min-width: 180px;
+}
+
+.medicine-name {
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.medicine-id {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--on-surface-variant);
+  margin-top: 2px;
+}
+
+.category-tag {
+  display: inline-block;
+  background: var(--surface-container);
+  color: var(--on-surface-variant);
+  border: 1px solid var(--outline-variant);
+  border-radius: 3px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.batch-id {
+  font-size: 12px;
+  background: var(--surface-container-low);
+  padding: 2px 7px;
+  border-radius: 3px;
+  border: 1px solid var(--outline-variant);
+  color: var(--on-surface-variant);
+}
+
+/* ─── Stock bar ─── */
+.stock-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 140px;
+}
+
+.stock-bar-track {
+  flex: 1;
+  height: 8px;
+  background: var(--surface-container-high);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.stock-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stock-bar-fill.healthy {
+  background: linear-gradient(90deg, #166534 0%, var(--success) 100%);
+}
+
+.stock-bar-fill.warning {
+  background: linear-gradient(90deg, #92400e 0%, var(--warning) 100%);
+}
+
+.stock-bar-fill.critical {
+  background: linear-gradient(90deg, #991b1b 0%, var(--critical) 100%);
+}
+
+.stock-qty {
+  font-size: 12px;
+  color: var(--on-surface-variant);
+  min-width: 36px;
+  text-align: right;
+}
+
+/* ─── Expiry & price cells ─── */
+.price-cell {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+.expiry-cell {
+  white-space: nowrap;
+}
+
+.expiry-near {
+  color: var(--warning);
+  font-weight: 600;
+}
+
+/* ─── Empty row ─── */
+.empty-table-row {
+  text-align: center;
+  color: var(--on-surface-variant);
+  padding: 48px !important;
+}
+
+/* ─── Pagination ─── */
+.inv-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pagination-info {
+  font-size: 13px;
+  color: var(--on-surface-variant);
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pg-btn {
+  min-width: 34px;
+  height: 34px;
+  padding: 0 6px;
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-sm);
+  background: var(--surface-container-lowest);
+  color: var(--on-surface);
+  font-size: 13px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.pg-btn:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.pg-btn:not(:disabled):hover {
+  background: var(--surface-container);
+  border-color: var(--outline);
+}
+
+.pg-btn.pg-num.active {
+  background: var(--primary);
+  color: var(--on-primary);
+  border-color: var(--primary);
+  font-weight: 600;
+}
+
+.pg-ellipsis {
+  padding: 0 4px;
+  color: var(--on-surface-variant);
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .inv-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .inv-filter-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .inv-results-count {
+    margin-left: 0;
+  }
+}

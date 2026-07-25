@@ -1,0 +1,313 @@
+/* ─── Sidebar Shell ─── */
+.side-navbar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 260px;
+  background: var(--surface-container-lowest);
+  border-right: 1px solid var(--outline-variant);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 30;
+  overflow-y: auto;
+}
+
+/* ─── Brand Section ─── */
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 18px 16px;
+  border-bottom: 1px solid var(--outline-variant);
+}
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--primary-deep) 0%, var(--primary) 100%);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.brand-logo-icon {
+  color: var(--on-primary);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  font-family: var(--font-primary);
+}
+
+.brand-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+  line-height: 14px;
+}
+
+.brand-title {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+  color: var(--on-surface);
+}
+
+/* ─── New Dispense Button ─── */
+.new-dispense-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 14px 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--primary-deep) 0%, var(--primary) 100%);
+  color: var(--on-primary);
+  padding: 11px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  letter-spacing: 0.01em;
+}
+
+.new-dispense-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 63, 135, 0.32);
+}
+
+.new-dispense-icon {
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 300;
+}
+
+/* ─── Divider ─── */
+.nav-divider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px 6px;
+}
+
+.nav-divider span {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+  opacity: 0.6;
+}
+
+/* ─── Nav Links ─── */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 10px;
+}
+
+.nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--on-surface-variant);
+  text-align: left;
+  padding: 9px 12px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav-link:hover {
+  background: var(--surface-container-low);
+  color: var(--on-surface);
+}
+
+.nav-link.active {
+  background: #dde8fb;
+  color: var(--primary-deep);
+  border-color: #c0d4f7;
+  font-weight: 600;
+}
+
+.nav-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+  line-height: 1;
+  width: 18px;
+  text-align: center;
+}
+
+.nav-label {
+  flex: 1;
+}
+
+.nav-active-bar {
+  width: 4px;
+  height: 16px;
+  border-radius: var(--radius-pill);
+  background: var(--primary);
+  flex-shrink: 0;
+}
+
+/* ─── Bottom section ─── */
+.nav-bottom {
+  margin-top: auto;
+  padding-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-bottom .nav-links {
+  padding: 0 10px;
+}
+
+.support-link {
+  color: var(--secondary) !important;
+}
+
+.support-link:hover {
+  color: var(--on-secondary-container) !important;
+  background: var(--secondary-container) !important;
+  border-color: var(--secondary-fixed-dim) !important;
+}
+
+/* ─── Version badge ─── */
+.sidebar-version {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px 4px;
+  margin-top: 8px;
+  border-top: 1px solid var(--outline-variant);
+}
+
+.sidebar-version span:first-child {
+  font-size: 11px;
+  color: var(--on-surface-variant);
+  opacity: 0.6;
+}
+
+.version-badge {
+  font-size: 10px;
+  font-family: var(--font-mono);
+  padding: 2px 6px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-container);
+  color: var(--on-surface-variant);
+  border: 1px solid var(--outline-variant);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .side-navbar {
+    position: static;
+    width: 100%;
+    border-right: 0;
+    border-bottom: 1px solid var(--outline-variant);
+    overflow: visible;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 4px 10px;
+  }
+
+  .nav-link {
+    flex: 0 0 auto;
+  }
+
+  .nav-active-bar {
+    display: none;
+  }
+
+  .nav-bottom {
+    margin-top: 0;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .sidebar-version {
+    border-top: none;
+    margin-left: auto;
+    padding: 8px 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Hide the top brand section in mobile bottom-bar mode */
+  .brand-section, .nav-divider, .sidebar-version, .nav-bottom .nav-links {
+    display: none;
+  }
+
+  /* Make sidebar a bottom navigation bar */
+  .side-navbar {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 60px;
+    border-top: 1px solid var(--outline-variant);
+    border-bottom: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 8px;
+    background: var(--surface-container-lowest);
+    z-index: 100;
+  }
+
+  .new-dispense-btn {
+    display: none; /* Can be handled via the 'Dispense' nav link instead on mobile */
+  }
+
+  .nav-links {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: space-around;
+    padding: 0;
+    gap: 0;
+  }
+
+  .nav-link {
+    flex-direction: column;
+    padding: 4px;
+    gap: 2px;
+    text-align: center;
+    border: none;
+    justify-content: center;
+  }
+
+  .nav-link:hover {
+    background: transparent;
+  }
+
+  .nav-link.active {
+    background: transparent;
+    border: none;
+    color: var(--primary);
+  }
+
+  .nav-icon {
+    font-size: 20px;
+  }
+
+  .nav-label {
+    font-size: 10px;
+    flex: none;
+  }
+}
