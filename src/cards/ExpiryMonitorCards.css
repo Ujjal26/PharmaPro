@@ -1,3 +1,8 @@
+/*
+ * File: ExpiryMonitorCards.css
+ * Description: Styles for the Expiry Monitor view, including filter bars,
+ * expiry warning cards, and urgency badges.
+ */
 /* ─── Section ─── */
 .expiry-monitor { display: flex; flex-direction: column; gap: 20px; }
 

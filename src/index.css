@@ -1,3 +1,8 @@
+/*
+ * File: index.css
+ * Description: Global stylesheet containing CSS variables, design tokens,
+ * resets, and shared utility classes for the entire application.
+ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;450;500&display=swap');
 
 :root {

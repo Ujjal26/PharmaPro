@@ -1,3 +1,8 @@
+/**
+ * File: StockEntryForm.jsx
+ * Description: Form for clinical staff to add new medicine batches to the 
+ * inventory. Handles input validation, formatting, and submission to Firestore.
+ */
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { submitStockEntry } from "../slices/stockEntrySlice";
@@ -33,6 +38,11 @@ const EMPTY_FORM = {
   notes: "",
 };
 
+/**
+ * StockEntryForm Component
+ * 
+ * @returns {JSX.Element} The rendered stock entry form.
+ */
 function StockEntryForm() {
   const dispatch = useDispatch();
   const { currentUser } = useAuth();

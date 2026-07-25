@@ -1,3 +1,9 @@
+/**
+ * File: InventoryTable.jsx
+ * Description: The primary data table for viewing all inventory items. 
+ * Supports sorting, pagination, category filtering, status filtering, and 
+ * customizable layout density.
+ */
 /* eslint-disable react-hooks/static-components */
 import { useState, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -22,6 +28,13 @@ const SORT_KEYS = {
   expiryDate: (a, b) => new Date(a.expiryDate) - new Date(b.expiryDate),
 };
 
+/**
+ * InventoryTable Component
+ * 
+ * @param {Object} props - The component props.
+ * @param {Array} props.items - The list of inventory items.
+ * @returns {JSX.Element} The rendered inventory table.
+ */
 function InventoryTable({ items }) {
   const dispatch = useDispatch();
   const categoryFilter = useSelector(

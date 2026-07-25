@@ -1,3 +1,8 @@
+/*
+ * File: SupportForm.css
+ * Description: Styles for the Support Form view, including the main form, 
+ * success state, and information sidebar.
+ */
 /* ─── Layout ─── */
 .support-layout {
   display: grid;

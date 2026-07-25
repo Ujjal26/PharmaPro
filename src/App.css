@@ -1,3 +1,8 @@
+/*
+ * File: App.css
+ * Description: Styles for the main application shell, layout structure, 
+ * and responsive behavior for the main content area.
+ */
 .app-shell {
   display: flex;
   min-height: 100vh;

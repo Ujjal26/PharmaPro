@@ -1,3 +1,8 @@
+/**
+ * File: SupportForm.jsx
+ * Description: Form for users to submit IT or clinical support requests. 
+ * Includes validation for required fields, issue types, and priority levels.
+ */
 /* eslint-disable react-hooks/purity */
 import { useState } from 'react'
 import './SupportForm.css'
@@ -25,6 +30,11 @@ const EMPTY_FORM = {
   attachmentNote: '',
 }
 
+/**
+ * SupportForm Component
+ * 
+ * @returns {JSX.Element} The rendered support form.
+ */
 function SupportForm() {
   const [form, setForm] = useState(EMPTY_FORM)
   const [errors, setErrors] = useState({})

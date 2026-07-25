@@ -1,3 +1,8 @@
+/*
+ * File: Header.css
+ * Description: Styles for the global Header component, including search bar, 
+ * notification dropdown, and responsive layouts.
+ */
 /* ─── Header shell ─── */
 .top-header {
   position: sticky;

@@ -1,3 +1,9 @@
+/**
+ * File: ExpiryMonitorCards.jsx
+ * Description: Component providing a detailed view of inventory items grouped 
+ * by their expiry status. Includes filtering by expiry window and category,
+ * and allows users to clear expired batches from the system.
+ */
 import { useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./ExpiryMonitorCards.css";
@@ -9,6 +15,13 @@ import {
 import { removeItemFromFirestore } from "../slices/inventorySlice";
 import { useAuth } from "../user auth/AuthContext";
 
+/**
+ * ExpiryMonitorCards Component
+ * 
+ * @param {Object} props - The component props.
+ * @param {Array} props.items - The list of inventory items.
+ * @returns {JSX.Element} The rendered expiry monitor view.
+ */
 function ExpiryMonitorCards({ items }) {
   const dispatch = useDispatch();
   const { currentUser } = useAuth();

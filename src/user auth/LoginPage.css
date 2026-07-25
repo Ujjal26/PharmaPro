@@ -1,3 +1,8 @@
+/*
+ * File: LoginPage.css
+ * Description: Styles for the Authentication views (Login and Signup). Includes
+ * layout for the split-screen design, form inputs, and branding panel.
+ */
 /* ─── Auth Shell (full-page) ─── */
 .auth-shell {
   min-height: 100vh;

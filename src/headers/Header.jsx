@@ -1,3 +1,9 @@
+/**
+ * File: Header.jsx
+ * Description: The main top navigation header for the application. Contains 
+ * global search functionality, notification alerts for near-expiry items, 
+ * and the user authentication profile panel.
+ */
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./Header.css";
@@ -8,6 +14,11 @@ import {
 } from "../slices/uiSlice";
 import UserAuthPanel from "../user auth/UserAuthPanel";
 
+/**
+ * Header Component
+ * 
+ * @returns {JSX.Element} The rendered header.
+ */
 function Header() {
   const dispatch = useDispatch();
   const globalSearch = useSelector((state) => state.ui.globalSearch);

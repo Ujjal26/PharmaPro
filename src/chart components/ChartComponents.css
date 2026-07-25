@@ -1,3 +1,8 @@
+/*
+ * File: ChartComponents.css
+ * Description: Shared styles for chart-related components including 
+ * StockLevelOverview, StockTrendGraph, NearExpiryTable, and RecentActivityFeed.
+ */
 /* ─── Shared chart card styles ─── */
 .chart-card {
   padding: 20px 24px;

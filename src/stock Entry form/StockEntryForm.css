@@ -1,3 +1,8 @@
+/*
+ * File: StockEntryForm.css
+ * Description: Styles for the Stock Entry view, including the main form 
+ * layout, input fields, and the recent entries side panel.
+ */
 /* ─── Layout ─── */
 .stock-entry-layout {
   display: grid;

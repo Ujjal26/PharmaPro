@@ -1,3 +1,8 @@
+/*
+ * File: InventoryTable.css
+ * Description: Styles for the comprehensive Inventory Table, including 
+ * sorting icons, density controls, pagination, and stock level bars.
+ */
 /* ─── Inventory Section ─── */
 .inventory-section {
   display: flex;

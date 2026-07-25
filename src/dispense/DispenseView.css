@@ -1,3 +1,8 @@
+/*
+ * File: DispenseView.css
+ * Description: Styles for the Dispense interface, including the left inventory 
+ * table and the right-side cart summary.
+ */
 .dispense-view {
   display: grid;
   grid-template-columns: 1fr 340px;

@@ -1,6 +1,19 @@
+/**
+ * File: SummaryCards.jsx
+ * Description: Displays a grid of high-level Key Performance Indicator (KPI) 
+ * cards for the dashboard, summarizing total stock, near expiry count, 
+ * low stock count, and total inventory value.
+ */
 import { getDaysUntilExpiry, getInventoryStatus } from '../dashboard/inventoryMetrics'
 import './SummaryCards.css'
 
+/**
+ * SummaryCards Component
+ * 
+ * @param {Object} props - The component props.
+ * @param {Array} props.items - The list of inventory items.
+ * @returns {JSX.Element} The rendered KPI cards grid.
+ */
 const CARD_CONFIGS = [
   {
     key: 'total-stock',

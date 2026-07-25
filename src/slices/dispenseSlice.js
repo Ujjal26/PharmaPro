@@ -1,3 +1,9 @@
+/**
+ * File: dispenseSlice.js
+ * Description: Redux slice for managing the dispense cart state and processing
+ * dispense submissions. Handles calculating totals, profits, updating history,
+ * and decrementing inventory in Firestore.
+ */
 /* eslint-disable no-unused-vars */
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import {
@@ -23,6 +29,15 @@ const initialState = {
 };
 
 /* ─── Async: Submit dispense to Firestore ─── */
+
+/**
+ * Submits the current dispense cart to Firestore.
+ * Performs two main tasks:
+ * 1. Updates the dispense history document for each item to track revenue/profit.
+ * 2. Decrements the quantity of the dispensed items in the inventory.
+ * 
+ * @param {string} userId - The unique identifier of the authenticated user.
+ */
 export const submitDispense = createAsyncThunk(
   "dispense/submit",
   async (userId, { getState, dispatch }) => {

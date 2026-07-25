@@ -1,3 +1,8 @@
+/**
+ * File: StockTrendGraph.jsx
+ * Description: SVG-based line chart component displaying the historical trend 
+ * of inventory stock (either by units or by financial value) over time.
+ */
 import { useMemo, useState, useRef } from "react";
 import { MONTHLY_HISTORY } from "../slices/stockEntrySlice";
 import "./ChartComponents.css";

@@ -1,3 +1,8 @@
+/*
+ * File: UserAuthPanel.css
+ * Description: Styles for the user authentication panel in the header, 
+ * including the user button, avatar, and dropdown menu.
+ */
 .user-auth-panel {
   position: relative;
 }

@@ -1,8 +1,20 @@
+/**
+ * File: LoginPage.jsx
+ * Description: The authentication login view. Handles user sign-in via 
+ * email/password or Google, and provides password reset functionality.
+ */
 /* eslint-disable no-unused-vars */
 import { useState } from 'react'
 import { useAuth } from './AuthContext'
 import './LoginPage.css'
 
+/**
+ * LoginPage Component
+ * 
+ * @param {Object} props - The component props.
+ * @param {Function} props.onSwitchToSignup - Callback to switch to the signup view.
+ * @returns {JSX.Element} The rendered login page.
+ */
 function LoginPage({ onSwitchToSignup }) {
   const { login, resetPassword, loginWithGoogle } = useAuth()
 

@@ -1,5 +1,17 @@
+/**
+ * File: RecentActivityFeed.jsx
+ * Description: Component that displays a timeline of recent stock entry 
+ * activities, showing medicine names, batches, quantities, and timestamps.
+ */
 import './ChartComponents.css'
 
+/**
+ * RecentActivityFeed Component
+ * 
+ * @param {Object} props - The component props.
+ * @param {Array} props.activities - The list of recent activity records.
+ * @returns {JSX.Element} The rendered activity feed card.
+ */
 function RecentActivityFeed({ activities }) {
   const formatTime = (iso) => {
     const date = new Date(iso)

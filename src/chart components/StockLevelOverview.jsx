@@ -1,7 +1,19 @@
+/**
+ * File: StockLevelOverview.jsx
+ * Description: Component that visualizes the average stock health across 
+ * different medicine categories using horizontal bar charts.
+ */
 import { useMemo } from 'react'
 import { getStockPercent } from '../dashboard/inventoryMetrics'
 import './ChartComponents.css'
 
+/**
+ * StockLevelOverview Component
+ * 
+ * @param {Object} props - The component props.
+ * @param {Array} props.items - The list of inventory items.
+ * @returns {JSX.Element} The rendered overview card.
+ */
 function StockLevelOverview({ items }) {
   const categoryLevels = useMemo(() => {
     const categoryMap = new Map()

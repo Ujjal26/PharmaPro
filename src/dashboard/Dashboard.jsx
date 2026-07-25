@@ -1,3 +1,9 @@
+/**
+ * File: Dashboard.jsx
+ * Description: The main dashboard view component. It renders a high-level 
+ * overview of the pharmacy inventory, including summary cards, activity feeds,
+ * stock level graphs, and near-expiry alerts.
+ */
 import './Dashboard.css'
 import SummaryCards from '../cards/SummaryCards'
 import StockLevelOverview from '../chart components/StockLevelOverview'
@@ -6,6 +12,14 @@ import NearExpiryTable from '../chart components/NearExpiryTable'
 import StockTrendGraph from '../chart components/StockTrendGraph'
 import CsvImportExport from './CsvImportExport'
 
+/**
+ * Dashboard Component
+ * 
+ * @param {Object} props - The component props.
+ * @param {Array} props.items - The list of inventory items.
+ * @param {Array} props.activities - The list of recent stock entry activities.
+ * @returns {JSX.Element} The rendered dashboard section.
+ */
 function Dashboard({ items, activities }) {
   const now = new Date()
   const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }

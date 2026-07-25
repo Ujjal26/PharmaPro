@@ -1,7 +1,17 @@
+/**
+ * File: UserAuthPanel.jsx
+ * Description: The user profile dropdown in the header. Displays the current 
+ * user's initials, name, and role, and provides a logout action.
+ */
 import { useState } from 'react'
 import { useAuth } from './AuthContext'
 import './UserAuthPanel.css'
 
+/**
+ * UserAuthPanel Component
+ * 
+ * @returns {JSX.Element} The rendered user authentication panel.
+ */
 function UserAuthPanel() {
   const { currentUser, logout } = useAuth()
   const [menuOpen, setMenuOpen] = useState(false)

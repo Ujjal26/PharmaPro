@@ -1,7 +1,19 @@
+/**
+ * File: NearExpiryTable.jsx
+ * Description: Component that displays a table of inventory items that are 
+ * nearing their expiration date (within 45 days) or have already expired.
+ */
 import { useMemo } from 'react'
 import { getDaysUntilExpiry, getInventoryStatus } from '../dashboard/inventoryMetrics'
 import './ChartComponents.css'
 
+/**
+ * NearExpiryTable Component
+ * 
+ * @param {Object} props - The component props.
+ * @param {Array} props.items - The list of inventory items.
+ * @returns {JSX.Element} The rendered table card.
+ */
 function NearExpiryTable({ items }) {
   const alertItems = useMemo(() => {
     return items

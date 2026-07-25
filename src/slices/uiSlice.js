@@ -1,5 +1,9 @@
+/**
+ * File: uiSlice.js
+ * Description: Redux slice for managing the global UI state, including the 
+ * current active view, search queries, filters, and notification alerts.
+ */
 import { createSlice } from '@reduxjs/toolkit'
-
 const initialState = {
   currentView: 'dashboard',
   globalSearch: '',
@@ -16,6 +20,7 @@ const uiSlice = createSlice({
   name: 'ui',
   initialState,
   reducers: {
+    /** Sets the current main view of the application (e.g., 'dashboard', 'inventory'). */
     setCurrentView(state, action) {
       state.currentView = action.payload
     },
@@ -37,16 +42,19 @@ const uiSlice = createSlice({
     setExpiryCategory(state, action) {
       state.expiryCategory = action.payload
     },
+    /** Marks a specific alert as read. */
     markAlertRead(state, action) {
       const id = action.payload
       if (!state.readAlertIds.includes(id)) {
         state.readAlertIds.push(id)
       }
     },
+    /** Marks all provided alerts as read. */
     markAllAlertsRead(state, action) {
       // action.payload = array of all current alert item IDs
       state.readAlertIds = action.payload
     },
+    /** Resets the read alerts state. */
     resetAlerts(state) {
       state.readAlertIds = []
     },

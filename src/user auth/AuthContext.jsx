@@ -1,3 +1,8 @@
+/**
+ * File: AuthContext.jsx
+ * Description: Provides global authentication state and methods (login, signup, 
+ * logout, reset password, google login) using Firebase Auth and Firestore.
+ */
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useState, useEffect } from "react";
 import {
@@ -18,10 +23,20 @@ export function useAuth() {
   return useContext(AuthContext);
 }
 
+/**
+ * AuthProvider Component
+ * Wraps the application to provide authentication context to its children.
+ * 
+ * @param {Object} props - React props containing children.
+ */
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  /**
+   * Registers a new user with email and password, and saves their profile 
+   * to Firestore.
+   */
   async function signup(email, password, displayName) {
     const { user } = await createUserWithEmailAndPassword(
       auth,
@@ -38,6 +53,9 @@ export function AuthProvider({ children }) {
     return user;
   }
 
+  /**
+   * Authenticates a user with email and password.
+   */
   function login(email, password) {
     return signInWithEmailAndPassword(auth, email, password);
   }
@@ -46,6 +64,9 @@ export function AuthProvider({ children }) {
     return signOut(auth);
   }
 
+  /**
+   * Sends a password reset email to the specified address.
+   */
   function resetPassword(email) {
     return sendPasswordResetEmail(auth, email);
   }

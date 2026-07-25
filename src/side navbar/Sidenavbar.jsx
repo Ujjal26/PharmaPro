@@ -1,3 +1,9 @@
+/**
+ * File: Sidenavbar.jsx
+ * Description: The primary side navigation bar for the application. 
+ * Allows users to switch between different views (Dashboard, Inventory, etc.) 
+ * and provides a quick action for "New Dispense".
+ */
 import "./SideNavbar.css";
 
 const navItems = [
@@ -7,6 +13,14 @@ const navItems = [
   { label: "Stock Entry", value: "stock-entry", icon: "➕" },
 ];
 
+/**
+ * SideNavbar Component
+ * 
+ * @param {Object} props - The component props.
+ * @param {string} props.currentView - The currently active view/page.
+ * @param {Function} props.onNavigate - Callback to change the active view.
+ * @returns {JSX.Element} The rendered side navigation bar.
+ */
 function SideNavbar({ currentView, onNavigate }) {
   return (
     <aside className="side-navbar">

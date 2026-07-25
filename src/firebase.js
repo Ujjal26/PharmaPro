@@ -1,5 +1,9 @@
-// Firebase setup for authentication, Firestore access, and Google sign-in.
-// Import the functions you need from the SDKs you need
+/**
+ * File: firebase.js
+ * Description: Firebase setup and initialization. Configures authentication, 
+ * Firestore database access, and provides exportable instances for use 
+ * throughout the application.
+ */
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";

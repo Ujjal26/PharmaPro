@@ -1,3 +1,9 @@
+/**
+ * File: inventorySlice.js
+ * Description: Redux slice for managing the pharmacy inventory state.
+ * Contains async thunks for interacting with Firestore (fetching, adding,
+ * removing, and updating inventory items) and reducers for local state management.
+ */
 /* eslint-disable no-unused-vars */
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import {
@@ -13,6 +19,12 @@ import { db } from "../firebase.js";
 const COLLECTION = "pharmacy_inventory";
 
 /* ─── Async thunks ─── */
+
+/**
+ * Fetches the user's inventory from Firestore.
+ * 
+ * @param {string} userId - The unique identifier of the authenticated user.
+ */
 export const fetchInventory = createAsyncThunk(
   "inventory/fetch",
   async (userId) => {
@@ -32,6 +44,13 @@ export const fetchInventory = createAsyncThunk(
   },
 );
 
+/**
+ * Adds a new item to Firestore, or updates the quantity if it already exists.
+ * 
+ * @param {Object} payload - The payload containing the item and userId.
+ * @param {Object} payload.item - The inventory item to add.
+ * @param {string} payload.userId - The unique identifier of the user.
+ */
 export const addItemToFirestore = createAsyncThunk(
   "inventory/addToFirestore",
   async ({ item, userId }, { getState }) => {
@@ -64,6 +83,11 @@ export const addItemToFirestore = createAsyncThunk(
   },
 );
 
+/**
+ * Removes an item completely from Firestore.
+ * 
+ * @param {Object} payload - The payload containing the item id and userId.
+ */
 export const removeItemFromFirestore = createAsyncThunk(
   "inventory/removeFromFirestore",
   async ({ id, userId }) => {
@@ -77,6 +101,12 @@ export const removeItemFromFirestore = createAsyncThunk(
   },
 );
 
+/**
+ * Decrements the quantity of an item in Firestore.
+ * If the quantity drops to 0 or below, it removes the item.
+ * 
+ * @param {Object} payload - The payload containing id, newQty, and userId.
+ */
 export const decrementItemInFirestore = createAsyncThunk(
   "inventory/decrementInFirestore",
   async ({ id, newQty, userId }) => {

@@ -1,3 +1,8 @@
+/*
+ * File: Sidenavbar.css
+ * Description: Styles for the Side Navigation Bar. Includes layout for 
+ * desktop (side) and mobile (bottom) views, hover states, and branding.
+ */
 /* ─── Sidebar Shell ─── */
 .side-navbar {
   position: fixed;

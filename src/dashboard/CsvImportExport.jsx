@@ -1,3 +1,9 @@
+/**
+ * File: CsvImportExport.jsx
+ * Description: Component for importing and exporting inventory data in CSV format.
+ * Provides functionality to download current stock as a CSV file and to upload
+ * a CSV file to add or update stock items in Firestore.
+ */
 /* eslint-disable no-unused-vars */
 import { useState, useRef } from 'react'
 import { useDispatch } from 'react-redux'
@@ -5,6 +11,13 @@ import { addItemToFirestore } from '../slices/inventorySlice'
 import { useAuth } from '../user auth/AuthContext'
 import './CsvImportExport.css'
 
+/**
+ * CsvImportExport Component
+ * 
+ * @param {Object} props - The component props.
+ * @param {Array} props.items - The current inventory items used for export.
+ * @returns {JSX.Element} The rendered CSV import/export control panel.
+ */
 function CsvImportExport({ items }) {
   const dispatch = useDispatch()
   const { currentUser } = useAuth()

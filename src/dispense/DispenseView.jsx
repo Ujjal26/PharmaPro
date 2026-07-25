@@ -1,3 +1,9 @@
+/**
+ * File: DispenseView.jsx
+ * Description: Interface for dispensing medicines. Features an inventory 
+ * selection table, search and filtering, and a cart summary for confirming 
+ * dispense orders and calculating profit margins.
+ */
 import { useState, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./DispenseView.css";
@@ -12,6 +18,11 @@ import {
 } from "../slices/dispenseSlice";
 import { useAuth } from "../user auth/AuthContext";
 
+/**
+ * DispenseView Component
+ * 
+ * @returns {JSX.Element} The rendered dispense view.
+ */
 function DispenseView() {
   const dispatch = useDispatch();
   const { currentUser } = useAuth();

@@ -1,3 +1,8 @@
+/*
+ * File: CsvImportExport.css
+ * Description: Styles for the CSV Import/Export component, including buttons,
+ * status messages, and container layout.
+ */
 .csv-import-export {
   padding: 1.25rem 1.5rem;
   margin-top: 1rem;

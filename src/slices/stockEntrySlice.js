@@ -1,3 +1,8 @@
+/**
+ * File: stockEntrySlice.js
+ * Description: Redux slice for managing the history and state of stock entries.
+ * Handles the recording of new stock additions.
+ */
 import { createSlice } from '@reduxjs/toolkit'
 
 export const MONTHLY_HISTORY = []
@@ -11,6 +16,10 @@ const stockEntrySlice = createSlice({
   name: 'stockEntry',
   initialState,
   reducers: {
+    /**
+     * Submit a new stock entry and add it to the recent entries list.
+     * Keeps only the 8 most recent entries.
+     */
     submitStockEntry(state, action) {
       state.submissions.unshift(action.payload)
       state.recentEntries.unshift({

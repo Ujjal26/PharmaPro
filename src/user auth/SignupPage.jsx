@@ -1,3 +1,8 @@
+/**
+ * File: SignupPage.jsx
+ * Description: The user registration view. Allows new clinical staff to create 
+ * an account, select their role, and ensures strong password requirements.
+ */
 /* eslint-disable no-unused-vars */
 import { useState } from 'react'
 import { useAuth } from './AuthContext'
@@ -5,6 +10,12 @@ import './LoginPage.css'
 
 const ROLES = ['Pharmacist', 'Pharmacy Technician', 'Clinical Manager', 'Nurse Practitioner']
 
+/**
+ * Evaluates password strength and returns a score and styling data.
+ * 
+ * @param {string} pw - The password to evaluate.
+ * @returns {Object} Object containing score (0-4), label, color, and percentage.
+ */
 function getPasswordStrength(pw) {
   if (pw.length === 0) return { score: 0, label: '', color: '' }
   let score = 0
@@ -22,6 +33,13 @@ function getPasswordStrength(pw) {
   return { score, ...map[Math.min(score, 4)] }
 }
 
+/**
+ * SignupPage Component
+ * 
+ * @param {Object} props - The component props.
+ * @param {Function} props.onSwitchToLogin - Callback to switch to the login view.
+ * @returns {JSX.Element} The rendered signup page.
+ */
 function SignupPage({ onSwitchToLogin }) {
   const { signup, loginWithGoogle } = useAuth()
 
